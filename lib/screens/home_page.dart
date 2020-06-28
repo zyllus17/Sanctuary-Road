@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:routing/widgets/app_bar.dart';
+import 'package:routing/widgets/arrow_icon.dart';
+import 'package:routing/widgets/page_indicator.dart';
+import 'package:routing/widgets/share_button.dart';
 
 import 'leopard/leopard_image.dart';
 import 'leopard/leopard_page.dart';
@@ -47,6 +50,9 @@ class HomePage extends StatelessWidget {
               Appbar(),
               LeopardImage(),
               VultureImage(),
+              ShareButton(),
+              PageIndicator(),
+              ArrowIcon(),
             ],
           ),
         ),
