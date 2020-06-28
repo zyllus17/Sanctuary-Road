@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/vulture/base_camp_label.dart';
+import 'package:routing/screens/vulture/distance_label.dart';
+import 'package:routing/screens/vulture/travel_dots.dart';
 import 'package:routing/widgets/app_bar.dart';
 import 'package:routing/widgets/arrow_icon.dart';
 import 'package:routing/widgets/page_indicator.dart';
@@ -7,6 +10,11 @@ import 'package:routing/widgets/share_button.dart';
 
 import 'leopard/leopard_image.dart';
 import 'leopard/leopard_page.dart';
+import 'vulture/base_time_label.dart';
+import 'vulture/map_button.dart';
+import 'vulture/start_camp_label.dart';
+import 'vulture/start_time_label.dart';
+import 'vulture/travel_label_deatils.dart';
 import 'vulture/vulture_image.dart';
 import 'vulture/vulture_page.dart';
 
@@ -53,6 +61,15 @@ class HomePage extends StatelessWidget {
               ShareButton(),
               PageIndicator(),
               ArrowIcon(),
+              TravelDetailsLabel(),
+              StartCampLabel(),
+              StartTimeLabel(),
+              BaseCampLabel(),
+              BaseTimeLabel(),
+              DistanceLabel(),
+              TravelDots(),
+              MapButton(),
+             
             ],
           ),
         ),
