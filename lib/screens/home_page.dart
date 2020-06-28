@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/widgets/app_bar.dart';
 
-import 'leopard_page.dart';
-import 'vulture_page.dart';
+import 'leopard/leopard_image.dart';
+import 'leopard/leopard_page.dart';
+import 'vulture/vulture_image.dart';
+import 'vulture/vulture_page.dart';
 
 class PageOffsetNotifier with ChangeNotifier {
   double _offset = 0;
@@ -29,18 +32,23 @@ class HomePage extends StatelessWidget {
     return ChangeNotifierProvider(
       builder: (_) => PageOffsetNotifier(_pageController),
       child: Scaffold(
-        body: Stack(
-          children: [
-            PageView(
-              controller: _pageController,
-              physics: ClampingScrollPhysics(),
-              children: <Widget>[
-                LeopardPage(),
-                VulturePage(),
-              ],
-            ),
-            LeopardImage(),
-          ],
+        body: SafeArea(
+          child: Stack(
+            alignment: Alignment.centerLeft,
+            children: [
+              PageView(
+                controller: _pageController,
+                physics: ClampingScrollPhysics(),
+                children: <Widget>[
+                  LeopardPage(),
+                  VulturePage(),
+                ],
+              ),
+              Appbar(),
+              LeopardImage(),
+              VultureImage(),
+            ],
+          ),
         ),
       ),
     );
