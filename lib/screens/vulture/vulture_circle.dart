@@ -7,9 +7,15 @@ import '../home_page.dart';
 class VultureCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<PageOffsetNotifier>(
-      builder: (context, notifier, child) {
-        double multiplier = math.max(0, 4 * notifier.page - 3);
+    return Consumer2<PageOffsetNotifier, AnimationController>(
+      builder: (context, notifier, animation, child) {
+        double multiplier;
+        if (animation.value == 0) {
+          multiplier = math.max(0, 4 * notifier.page - 3);
+        } else {
+          multiplier = math.max(0, 1 - 6 * animation.value);
+        }
+
         double size = MediaQuery.of(context).size.width * 0.5 * multiplier;
         return Container(
           margin: const EdgeInsets.only(bottom: 250),

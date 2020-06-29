@@ -6,12 +6,18 @@ import '../home_page.dart';
 class VultureImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<PageOffsetNotifier>(
-      builder: (context, notifier, child) {
+    return Consumer2<PageOffsetNotifier, AnimationController>(
+      builder: (context, notifier, animation, child) {
         return Positioned(
           left:
               1.2 * MediaQuery.of(context).size.width - 0.85 * notifier.offset,
-          child: child,
+          child: Transform.scale(
+            scale: 1 - 0.1 * animation.value,
+            child: Opacity(
+              opacity: 1 - 0.6 * animation.value,
+              child: child,
+            ),
+          ),
         );
       },
       child: IgnorePointer(

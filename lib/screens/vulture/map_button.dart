@@ -22,7 +22,9 @@ class MapButton extends StatelessWidget {
             'ON MAP',
             style: TextStyle(fontSize: 12),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Provider.of<AnimationController>(context).forward();
+          },
         ),
       ),
     );
