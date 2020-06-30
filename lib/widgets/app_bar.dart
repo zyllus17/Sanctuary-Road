@@ -12,7 +12,7 @@ class Appbar extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Text(
-              'SY',
+              'SR',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Spacer(),
