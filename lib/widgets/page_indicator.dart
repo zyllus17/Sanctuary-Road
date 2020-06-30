@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/map/map_hider.dart';
 
 import '../screens/home_page.dart';
 import '../theme/styles.dart';
@@ -7,7 +8,8 @@ import '../theme/styles.dart';
 class PageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Consumer<PageOffsetNotifier>(
+    return MapHider(
+      child: Consumer<PageOffsetNotifier>(
         builder: (context, notifier, _) {
           return Align(
             alignment: Alignment.bottomCenter,
@@ -38,6 +40,7 @@ class PageIndicator extends StatelessWidget {
             ),
           );
         },
+      ),
     );
   }
 }
