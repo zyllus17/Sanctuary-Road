@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/map/map_animation_notifier.dart';
+import 'package:routing/screens/map/map_hider.dart';
+import 'package:routing/theme/styles.dart';
 import 'dart:math' as math;
 import '../home_page.dart';
 
@@ -10,7 +13,7 @@ class StartTimeLabel extends StatelessWidget {
       builder: (context, notifier, child) {
         double opacity = math.max(0, 4 * notifier.page - 3);
         return Positioned(
-          top: 128.0 + 400 + 32 + 16 + 32 + 40,
+          top: topMargin(context) + mainSquareSize(context) + 32 + 16 + 32 + 40,
           width: (MediaQuery.of(context).size.width - 48) / 3,
           left: opacity * 24.0,
           child: Opacity(
@@ -19,11 +22,14 @@ class StartTimeLabel extends StatelessWidget {
           ),
         );
       },
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Text(
-          '02:40 pm',
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+      child: MapHider(
+        child: Align(
+          alignment: Alignment.centerRight,
+          child: Text(
+            '02:40 pm',
+            style: TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w300, color: lighterGrey),
+          ),
         ),
       ),
     );
