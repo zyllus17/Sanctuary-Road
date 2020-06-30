@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/map/map_hider.dart';
 
 import '../home_page.dart';
 
@@ -20,12 +21,14 @@ class VultureImage extends StatelessWidget {
           ),
         );
       },
-      child: IgnorePointer(
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 90.0),
-          child: Image.asset(
-            'assets/vulture.png',
-            height: MediaQuery.of(context).size.height / 3,
+      child: MapHider(
+        child: IgnorePointer(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 90.0),
+            child: Image.asset(
+              'assets/vulture.png',
+              height: MediaQuery.of(context).size.height / 3,
+            ),
           ),
         ),
       ),
