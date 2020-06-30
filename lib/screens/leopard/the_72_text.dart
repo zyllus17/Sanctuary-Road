@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/map/map_animation_notifier.dart';
 
 import '../home_page.dart';
 
@@ -16,7 +17,7 @@ class The72Text extends StatelessWidget {
       child: RotatedBox(
         quarterTurns: 1,
         child: SizedBox(
-          width: 400,
+          width: mainSquareSize(context),
           child: FittedBox(
             alignment: Alignment.topCenter,
             fit: BoxFit.cover,
