@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routing/screens/map/map_hider.dart';
 import '../home_page.dart';
 
 class LeopardImage extends StatelessWidget {
@@ -20,8 +21,10 @@ class LeopardImage extends StatelessWidget {
           ),
         );
       },
-      child: IgnorePointer(
-        child: Image.asset('assets/leopard.png'),
+      child: MapHider(
+        child: IgnorePointer(
+          child: Image.asset('assets/leopard.png'),
+        ),
       ),
     );
   }
