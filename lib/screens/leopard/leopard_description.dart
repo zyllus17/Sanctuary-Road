@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'dart:math'as math;
+import 'dart:math' as math;
 import '../../theme/styles.dart';
 import '../home_page.dart';
 
